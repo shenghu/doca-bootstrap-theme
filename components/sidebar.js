@@ -73,10 +73,10 @@ class Sidebar extends Component {
           .toJS()
       );
     }
-    , []);
+      , []);
 
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop ||
-                      document.body.scrollTop || 0;
+      document.body.scrollTop || 0;
 
     // finds the first link that has top offset > top scroll position and breaks
     let activeId = null;
@@ -113,21 +113,19 @@ class Sidebar extends Component {
           />
         </div>
         {schemas.filter(schema => !schema.get('hidden')).valueSeq().map(schema =>
-          (getLinks(schema.get('links'), search).count() > 0 ?
-            <ul className="sidebar-nav" key={schema.get('id')}>
-              <li className="sidebar-category">{schema.get('title')}</li>
-              {getLinks(schema.get('links'), search).valueSeq().map(link =>
-                <li
-                  key={link.get('html_id')}
-                  className={link.get('html_id') === activeId ? 'active' : ''}
-                >
-                  <a href={`#${link.get('html_id')}`}>
-                    {link.get('title')}
-                  </a>
-                </li>
-              )}
-            </ul>
-          : null)
+          (
+          <ul className="sidebar-nav" key={schema.get('html_id')}>
+            <li className="sidebar-category">{schema.get('category')}</li>
+            <li
+              key={schema.get('html_id')}
+              className={schema.get('html_id') === activeId ? 'active' : ''}
+            >
+              <a href={`#${schema.get('html_id')}`}>
+                schema.get('title')
+              </a>
+            </li>
+          </ul>
+          )
         )}
       </nav>
     );

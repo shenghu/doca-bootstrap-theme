@@ -1,13 +1,13 @@
 {
-  "name": "doca-bootstrap-theme",
-  "version": "0.2.1",
-  "description": "Doca theme using Twitter Bootstrap",
+  "name": "doca-events-api-theme",
+  "version": "0.0.1",
+  "description": "Doca theme for documenting events API",
   "main": "index.js",
-  "author": "Vojtech Miksu <vojtech@miksu.cz>",
+  "author": "Sheng Hu<husbj@cn.ibm.com>",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cloudflare/doca-bootstrap-theme"
+    "url": "https://github.com/cloudflare/doca-events-api-theme"
   },
   "scripts": {
     "build": "npm run clean && mkdir -p build && babel components --out-dir build",
